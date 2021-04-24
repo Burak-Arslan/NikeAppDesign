@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cuffCardview"
+    android:id="@+id/nikeCardview"
     android:layout_width="match_parent"
-    android:layout_height="550dp"
+    android:layout_height="300dp"
     android:layout_margin="4dp"
     app:cardCornerRadius="7dp"
     app:cardElevation="2dp"
@@ -17,12 +17,11 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imgNews"
+            android:id="@+id/imgNike"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:background="@color/itemColor"
-            android:src="@drawable/uniform5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

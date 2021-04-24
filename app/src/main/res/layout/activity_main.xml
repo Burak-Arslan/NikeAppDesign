@@ -55,8 +55,11 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:spanCount="2"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
