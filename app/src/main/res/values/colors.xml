@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="lightwhite">#F5F5F5</color>
+    <color name="colorPrimaryDark">#fece2f</color>
+    <color name="navigationSelectedDark">#808080</color>
+    <color name="bagColor">#FE6921</color>
+    <color name="itemColor">#3C4147</color>
+
+
 </resources>

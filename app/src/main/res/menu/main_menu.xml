@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/anasayfa"
+            android:title="Anasayfa" />
+
+        <item
+            android:id="@+id/gelirGider"
+            android:title="Gelir - Gider" />
+
+        <item
+            android:id="@+id/grafikler"
+            android:title="Grafikler" />
+        kapattı
+    </group>
+
+    <item android:title="Profile">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/giris"
+                    android:title="Giriş" />
+
+                <item
+                    android:id="@+id/profil"
+                    android:title="Profil" />
+
+                <item
+                    android:id="@+id/cikis"
+                    android:title="Çıkış" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Kategori">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/taksit"
+                    android:title="Taksit Bilgisi" />
+
+                <item
+                    android:id="@+id/gelecekOdemelerim"
+                    android:title="Gelecek Gelirlerim" />
+
+                <item
+                    android:id="@+id/gelecekGiderlerim"
+                    android:title="Gelecek Giderlerim" />
+
+                <item
+                    android:id="@+id/bankaBilgilerim"
+                    android:title="Banka Hesaplarım" />
+
+                <item
+                    android:id="@+id/kurBilgileri"
+                    android:title="Kur Bilgileri - Hesaplama" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Paylaş">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/paylas1"
+                    android:title="WhatsApp" />
+
+                <item
+                    android:id="@+id/paylas2"
+                    android:title="Twitter" />
+
+                <item
+                    android:id="@+id/paylas3"
+                    android:title="LinkedIn" />
+
+            </group>
+        </menu>
+    </item>
+</menu>
