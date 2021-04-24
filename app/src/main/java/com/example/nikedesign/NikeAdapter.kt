@@ -37,6 +37,8 @@ class NikeAdapter(private val nikeList: List<NikeResponse>?, private val context
             holder.itemView.nikeCardview.setLayoutParams(layoutParams)
             holder.itemView.nikeCardview.setCardBackgroundColor(Color.parseColor("#3C4147"))
             holder.itemView.imgNike.setBackgroundResource(currentItem[0].image!!)
+            holder.itemView.txtName.text = currentItem[0].imageName
+            holder.itemView.txtName.isAllCaps = true
 
         } catch (e: Exception) {
             e.message?.let { Log.e("NikeAdapterViewMHolder", it) }

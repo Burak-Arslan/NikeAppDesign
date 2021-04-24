@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent"></ImageView>
 
     <TextView
-        android:id="@+id/btnNotifCount"
+        android:id="@+id/btnBagCount"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/textview_circle"
@@ -72,9 +72,54 @@
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerMain"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:visibility="invisible"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="120dp"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_one_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/contraint_rounded"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="@color/itemColor"
+                    app:cardCornerRadius="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="@+id/btnSecondLogin"
+                    app:layout_constraintStart_toStartOf="@+id/btnSecondLogin"
+                    app:layout_constraintTop_toBottomOf="@+id/txtInfo">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cardviewMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
@@ -94,6 +139,7 @@
             android:layout_marginTop="55dp"
             android:layout_marginLeft="80dp"
             android:layout_width="32dp"
+            android:id="@+id/imgSearch"
             android:layout_height="32dp"
             android:src="@drawable/search">
         </ImageView>
@@ -101,6 +147,7 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/btnBag"
             android:backgroundTint="@color/bagColor"
             android:src="@drawable/bag"
             android:tint="@color/white"

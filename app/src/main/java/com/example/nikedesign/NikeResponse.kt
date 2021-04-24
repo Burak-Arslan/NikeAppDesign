@@ -8,4 +8,6 @@ data class NikeResponse(
 
     var size: String? = null,
 
+    var imageName: String? = null
+
     )
