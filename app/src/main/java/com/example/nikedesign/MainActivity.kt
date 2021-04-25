@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
@@ -31,22 +33,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val list: MutableList<NikeResponse> = ArrayList()
 
-        list.add(NikeResponse(R.drawable.first2, "700", "Zoom Pegasus - $299"))
-        list.add(NikeResponse(R.drawable.first7, "450", "Mercurial - $199"))
-        list.add(NikeResponse(R.drawable.top3, "600", "Soccer Ball - $299"))
-        list.add(NikeResponse(R.drawable.first4, "450", "Nike Air - $499"))
-        list.add(NikeResponse(R.drawable.uniform, "700", "Football Shirt - $399"))
-        list.add(NikeResponse(R.drawable.first, "450", "Nike Air Max - $899"))
-        list.add(NikeResponse(R.drawable.top5, "600", "Juventus Ball - $499"))
-        list.add(NikeResponse(R.drawable.first3, "450", "Nike OutDoor - $699"))
-        list.add(NikeResponse(R.drawable.uniform2, "700", "City FC Shirt - $99"))
-        list.add(NikeResponse(R.drawable.first6, "450", "Nike Phantom - $999"))
-        list.add(NikeResponse(R.drawable.uniform3, "700", "Football Shirt - $99"))
-        list.add(NikeResponse(R.drawable.top4, "600", "Nike Soccer Ball - $99"))
-        list.add(NikeResponse(R.drawable.uniform4, "700", "Football Shirt - $199"))
-        list.add(NikeResponse(R.drawable.first5, "450", "SuperFly - $699"))
-        list.add(NikeResponse(R.drawable.uniform5, "700", "National Team - $399"))
-        list.add(NikeResponse(R.drawable.top, "600", "Soccer Ball - $99"))
+        list.add(NikeResponse(R.drawable.first2, "700", "Zoom Pegasus","$299"))
+        list.add(NikeResponse(R.drawable.first7, "450", "Mercurial","$199"))
+        list.add(NikeResponse(R.drawable.top3, "600", "Soccer Ball","$299"))
+        list.add(NikeResponse(R.drawable.first4, "450", "Nike Air","$499"))
+        list.add(NikeResponse(R.drawable.uniform, "700", "Football Shirt","$399"))
+        list.add(NikeResponse(R.drawable.first, "450", "Nike Air Max","$899"))
+        list.add(NikeResponse(R.drawable.top5, "600", "Juventus Ball","$499"))
+        list.add(NikeResponse(R.drawable.first3, "450", "Nike OutDoor","$699"))
+        list.add(NikeResponse(R.drawable.uniform2, "700", "City FC Shirt","$99"))
+        list.add(NikeResponse(R.drawable.first6, "450", "Nike Phantom","$999"))
+        list.add(NikeResponse(R.drawable.uniform3, "700", "Football Shirt","$99"))
+        list.add(NikeResponse(R.drawable.top4, "600", "Nike Soccer Ball","$99"))
+        list.add(NikeResponse(R.drawable.uniform4, "700", "Football Shirt","$199"))
+        list.add(NikeResponse(R.drawable.first5, "450", "SuperFly","$699"))
+        list.add(NikeResponse(R.drawable.uniform5, "700", "National Team","$399"))
+        list.add(NikeResponse(R.drawable.top, "600", "Soccer Ball","$99"))
 
         recyclerMain.adapter =
             NikeAdapter(list, this)
@@ -54,12 +56,46 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         recyclerMain.layoutManager = layoutManager
         recyclerMain.setHasFixedSize(true)
+
+        fillSheetadapter()
+    }
+
+    fun fillSheetadapter(){
+        val list: MutableList<NikeResponse> = ArrayList()
+
+        list.add(NikeResponse(R.drawable.first2, "700", "Zoom Pegasus","$299"))
+        list.add(NikeResponse(R.drawable.first7, "450", "Mercurial","$199"))
+        list.add(NikeResponse(R.drawable.top3, "600", "Soccer Ball","$299"))
+        list.add(NikeResponse(R.drawable.first4, "450", "Nike Air","$499"))
+        list.add(NikeResponse(R.drawable.uniform, "700", "Football Shirt","$399"))
+        list.add(NikeResponse(R.drawable.first, "450", "Nike Air Max","$899"))
+        list.add(NikeResponse(R.drawable.top5, "600", "Juventus Ball","$499"))
+        list.add(NikeResponse(R.drawable.first3, "450", "Nike OutDoor","$699"))
+        list.add(NikeResponse(R.drawable.uniform2, "700", "City FC Shirt","$99"))
+        list.add(NikeResponse(R.drawable.first6, "450", "Nike Phantom","$999"))
+        list.add(NikeResponse(R.drawable.uniform3, "700", "Football Shirt","$99"))
+        list.add(NikeResponse(R.drawable.top4, "600", "Nike Soccer Ball","$99"))
+        list.add(NikeResponse(R.drawable.uniform4, "700", "Football Shirt","$199"))
+        list.add(NikeResponse(R.drawable.first5, "450", "SuperFly","$699"))
+        list.add(NikeResponse(R.drawable.uniform5, "700", "National Team","$399"))
+        list.add(NikeResponse(R.drawable.top, "600", "Soccer Ball","$99"))
+
+        recyclerSheetBottom.adapter?.notifyDataSetChanged()
+        recyclerSheetBottom.adapter =
+            NikeSheetAdapter(list, this)
+        val layoutManagerSheet = LinearLayoutManager(
+            applicationContext,
+            LinearLayoutManager.VERTICAL,
+            false
+        )
+        recyclerSheetBottom.layoutManager = layoutManagerSheet
+        recyclerSheetBottom.setHasFixedSize(true)
     }
 
     fun events() {
 
         btnBag.setOnClickListener {
-
+            fillSheetadapter()
             imgSearch.visibility = View.GONE
             recyclerUpAnimated()
             animationBagAndBottomAppBar()

@@ -13,6 +13,7 @@
     <color name="navigationSelectedDark">#808080</color>
     <color name="bagColor">#FE6921</color>
     <color name="itemColor">#3C4147</color>
+    <color name="itemPriceColor">#3BF7FA</color>
 
 
 </resources>
